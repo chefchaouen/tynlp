@@ -2,6 +2,8 @@ import tensorflow as tf
 from tensorflow import keras
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 fashion_mnist = keras.datasets.fashion_mnist
 
@@ -31,4 +33,6 @@ keras.layers.Dense(10, activation="softmax")
 
 model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
 
-model.fit(train_images, train_labels, epochs=1)
+model.fit(train_images, train_labels, epochs=10)
+predictions = model.predict(test_images)
+predictions[0]
