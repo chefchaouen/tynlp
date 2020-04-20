@@ -1,3 +1,0 @@
-∑import word2vec as w2v
-
-print(dir(w2v))
